@@ -5,6 +5,7 @@
         if (token?.toLowerCase().startsWith("bearer")) {
             token = token.substring("bearer".length).trim()
         }
+        token = token.trim();
         promise = fetch("https://login.dnbregnskap.dnb.no/External/Disconnect?scheme=bankid", {method: "POST", headers: {Authorization: `Bearer ${token}`}});
     }
 
